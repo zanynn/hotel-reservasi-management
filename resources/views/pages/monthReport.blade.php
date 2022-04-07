@@ -5,7 +5,12 @@
     <div class="container-fluid">
         <div class="row">
             <h1>Laporan Bulan : Desember 2021</h1>
-
+            <div class="form-group">
+                <label for="">Pilih Bulan</label>
+                <select name="" id="">
+                    <option value=""></option>
+                </select>
+            </div>
         </div>
         <div class="row">
                 

@@ -22,6 +22,9 @@ class UserController extends Controller
 
     public function getDangNhapAdmin()
     {
+        if(auth()->user()){
+            return redirect('/admin/information/list');
+        }
         return view('admin.login');
     }
 
@@ -85,6 +88,7 @@ class UserController extends Controller
 
         $reservation = Reservation::orderBy('DateOut', 'ASC')
             ->get();
+        
 
         return view('pages.monthReport', ['chart' => $chart, 'reservation' => $reservation, 'idMonth' => $idMonth]);
     }

@@ -24,8 +24,8 @@ Route::get('reservation/{idCate}', 'PageController@Reservation');
 Route::get('invoice', 'PageController@Invoice');
 Route::post('postReservation', 'PageController@postReservation');
 Route::get('exportBill', 'UserController@ExportBill');
-Route::get('/admin/report', 'UserController@Report');
-Route::get('/admin/monthReport/{idMonth}', 'UserController@monthReport');
+// Route::get('/admin/report', 'UserController@Report');
+// Route::get('/admin/monthReport/{idMonth}', 'UserController@monthReport');
 
 
 //route cho login
@@ -172,6 +172,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 
 		Route::get('delete/{id}', 'UserController@Delete');
 	});	//Route for delete
+
+	Route::group(['prefix' => 'report'], function(){
+		Route::get('monthly', 'ReportController@monthly_report');
+		Route::get('yearly', 'ReportController@yearly_report');
+	});
 
 });
 

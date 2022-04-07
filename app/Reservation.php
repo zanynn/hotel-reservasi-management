@@ -14,4 +14,7 @@ class Reservation extends Model
     {
     	return $this->belongsTo('App\Room','idRoom','id');
     }
+    public function bills(){
+        return $this->hasMany('App\DetailBill', 'idReservation','id');
+    }
 }

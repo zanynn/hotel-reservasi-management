@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\DetailBill;
 use App\Reservation;
+use App\Room;
+
 class BillController extends Controller
 {
 	public function getBill($id)
@@ -55,5 +57,16 @@ class BillController extends Controller
         $bill->delete();
         return redirect('admin/bill/list/'.$idReser)->with('annoucement','Hapus tagihan berhasil');
      }
+
+     public function export($id){
+         $reservation = Reservation::findOrFail($id);
+         $bill_details = DetailBill::where('idReservation', $reservation->id)->get();
+         $total_price = 0;
+         foreach($bill_details as $bill_detail){
+            $total_price += $bill_detail->price;
+        }
+         $room = Room::findOrFail($reservation->idRoom);
+         return view('admin.bill.export', compact('reservation','bill_details','room','total_price'));
+    }
      
 }

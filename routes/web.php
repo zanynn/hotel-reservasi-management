@@ -19,6 +19,7 @@ Route::get('rooms', 'PageController@Rooms');
 Route::get('madidihang', 'PageController@HomeMadidihang');
 Route::get('albakor', 'PageController@HomeAlbakor');
 
+Route::get('reservation/success', 'PageController@reservation_success');
 Route::get('reservation/{idCate}', 'PageController@Reservation');
 Route::get('invoice', 'PageController@Invoice');
 Route::post('postReservation', 'PageController@postReservation');
@@ -32,7 +33,6 @@ Route::get('admin/login', 'UserController@getDangNhapAdmin');
 Route::post('admin/dangnhappost', 'UserController@postDangNhapAdmin');
 Route::get('admin/logout', 'UserController@getDangXuatAdmin');
 Route::get('admin', 'UserController@getDangNhapAdmin');
-Route::get('exportInvoice/{idReservation}', 'UserController@exportInvoice');
 //tạo route cho trang admin
 Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 
@@ -155,9 +155,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 		Route::get('list/{id}', 'BillController@getBill');
 		Route::get('add/{id}', 'BillController@add');
 		Route::post('addpost/{id}', 'BillController@addPost');
-		Route::get('export/{id}', 'BillController@Export');
-
-
+		Route::get('export/{id}', 'BillController@export');
 
 		Route::get('delete/{id}/{idReser}', 'BillController@Delete');
 	});	//Route for delete
@@ -171,8 +169,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 
 		Route::get('add', 'UserController@Add');
 		Route::post('addpost', 'UserController@AddPost');
-
-
 
 		Route::get('delete/{id}', 'UserController@Delete');
 	});	//Route for delete

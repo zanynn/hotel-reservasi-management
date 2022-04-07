@@ -127,8 +127,28 @@ class PageController extends Controller
     }
     public function Reservation($idCate)
     {
-
         return view('pages.Reservation', ['idCate' => $idCate]);
+    }
+    public function reservation_success(Request $request){
+        $reservation_id = $request->reservation_id;
+        if($request->has('reservation_id')){
+            
+            // find reservation data
+            // loop bill detail
+            $reservation = Reservation::where('id', $reservation_id)->firstOrFail();
+            
+            $bill_details = DetailBill::where('idReservation', $reservation->id)->get();
+            $total_price = 0;
+            foreach($bill_details as $bill_detail){
+                $total_price += $bill_detail->price;
+            }
+            $room = Room::where('id', $reservation->idRoom)->first();
+
+            $admin_phone_number = "6282142000728";
+            return view('pages.reservation_success', compact('reservation','bill_details','room','total_price','admin_phone_number'));
+        }else {
+            return redirect('/reservation/{1}');
+        }
     }
     public function Invoice()
     {
@@ -185,7 +205,8 @@ class PageController extends Controller
             $bill->idReservation = $reservation->id;
             $bill->created_at = $request->dateout;
             $bill->save();
-            return redirect('reservation/{1}')->with('annoucement', 'Pemesanan berhasil. Kamar Anda adalah ' . $roomtaken[0]->name . '  .See you soon !');
+
+            return redirect('/reservation/success?reservation_id=' . $reservation->id);
         } else return redirect('reservation/{1}')->with('annoucement', 'Mohon maaf jenis kamar yang anda pesan sudah habis, Silahkan memilih ditanggal yang lain atau memilih jenis kamar yang berbeda. Terima Kasih');
     }
 }

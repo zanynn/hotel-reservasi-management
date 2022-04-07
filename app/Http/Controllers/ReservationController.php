@@ -34,8 +34,6 @@ class ReservationController extends Controller
                 'name' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
-                'DateIn' => 'required',
-                'DateOut' => 'required',
                 'Numbers' => 'required',
             ],
             [
@@ -44,8 +42,6 @@ class ReservationController extends Controller
                 'name.required' => "Anda belum memasukkan nama pelanggan",
                 'phone.required' => "Anda tidak memasukkan nomor telepon",
                 'email.required' => "Anda tidak memasukkan email",
-                'DateIn.required' => "Anda belum memasukkan tanggal kedatangan",
-                'DateOut.required' => "Anda belum memasukkan tanggal keluar",
                 'Numbers.required' => "Anda tidak memasukkan nomor",
 
             ]
@@ -58,14 +54,9 @@ class ReservationController extends Controller
         $reservation->name = $request->name;
         $reservation->phone = $request->phone;
         $reservation->email = $request->email;
-        $reservation->DateIn = $request->DateIn;
-        $reservation->DateOut = $request->DateOut;
         $reservation->Numbers = $request->Numbers;
         $reservation->Notes = $request->Notes;
-
-
-
-
+        $reservation->status = $request->status;
         $reservation->save();
 
 

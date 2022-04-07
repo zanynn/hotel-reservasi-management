@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <button type="button" class="btn btn-warning"> <a href="admin/bill/add/{{$reservation->id}}"> Tambah Layanan lainnya </a> </button>
-                <button class="btn btn-warning"> <a href="exportInvoice/{{$reservation->id}}">Faktur</a> </button>
+                <button class="btn btn-warning"> <a href="admin/bill/export/{{$reservation->id}}">Faktur</a> </button>
                 <button class="btn btn-warning"> <a href="admin/reservation/delete/{{$reservation->id}}">Checkout</a> </button>
 
             </div>

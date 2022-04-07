@@ -24,10 +24,10 @@
                         <th>Rooms Name</th>
                         <th>Fullname</th>
                         <th>Phone Number</th>
-                        <th>Email</th>
                         <th>Check In</th>
                         <th>Check Out</th>
                         <th>Person</th>
+                        <th>Status Pembayaran</th>
                         {{-- <th>Notes</th> --}}
                         <th>Edit</th>
 
@@ -43,11 +43,13 @@
                             @foreach ($room as $ro) @if ($ro->id==$r->idRoom) {{$ro->name}} @endif @endforeach
                         </td>
                         <td>{{$r->name}}</td>
-                        <td>{{$r->phone}}</td>
-                        <td>{{$r->email}}</td>
-                        <td>{{$r->DateIn}}</td>
-                        <td>{{$r->DateOut}}</td>
+                        <td>
+                        <a href="https://wa.me/{{$r->phone}}">{{$r->phone}}</a>    
+                        </td>
+                        <td>{{date('d M Y', strtotime($r->DateIn))}}</td>
+                        <td>{{date('d M Y', strtotime($r->DateOut))}}</td>
                         <td>{{$r->Numbers}}</td>
+                        <td>{{$r->status}}</td>
                         {{-- <td>{{$r->Notes}}</td> --}}
 
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/reservation/edit/{{$r->id}}">Edit</a></td>

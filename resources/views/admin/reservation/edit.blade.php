@@ -68,6 +68,18 @@
                         <label>Notes</label>
                         <input class="form-control" name="Notes" placeholder="Please Enter Notes" value="{{$reservation->Notes}}" />
                     </div>
+                    <div class="form-group">
+                        <label>Status Pembayaran</label>
+                        <select class="form-control" name="status" id="">
+                            
+                            <option value="BELUM BAYAR" @if ($reservation->status == 'BELUM BAYAR')
+                                selected
+                                @endif>BELUM BAYAR</option>
+                            <option value="LUNAS" @if ($reservation->status == 'LUNAS')
+                                
+                                @endif>LUNAS</option>
+                        </select>
+                    </div>
 
 
                     <button type="submit" class="btn btn-default">Edit </button>

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Apr 2022 pada 05.02
--- Versi server: 10.4.8-MariaDB
--- Versi PHP: 7.1.32
+-- Waktu pembuatan: 07 Apr 2022 pada 15.20
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -82,10 +81,10 @@ CREATE TABLE `category_room` (
 --
 
 INSERT INTO `category_room` (`id`, `name`, `image`, `price`, `description`, `category_wisma`) VALUES
-(1, 'Standar Room', 'public/images/mrH0gMtjq28KRRmS6SckiJEUntNPk0mZeBSeiK2H.jpeg', '150000', 'Twin Bed', 2),
-(2, 'Exclusive Room', 'public/images/OKoGczndJcbLKxQHEA9deFOHeRMdbBBqZDTy4xB4.jpeg', '250000', 'Double Bed', 2),
-(3, 'Private Room', 'public/images/IXmtwCgk0lgsaodZxLjkLe7LhgRnCsgMX0izfxbq.jpeg', '120000', 'Double Bed, Full AC, Kamar Mandi Dalam', 1),
-(4, 'Standard', 'public/images/EjfmEdWEVmTlw1NZv9PT61BlJ3uG2K9JLMbVvYNv.jpeg', '30000', 'Kamar Barak, Kipas Angin, Loker Barang dengan kapasitas 4 dan 9 orang', 1);
+(1, 'Standar Room', 'public/images/y2beCDlNKNsPbDm7UX2UWgTyC90KEClhjDagrbe5.jpg', '150000', 'Twin Bed', 2),
+(2, 'Exclusive Room', 'public/images/iN22NNf29iyMnr1qKj6S1B89E7YpxbGT0ovWF1Ts.jpg', '250000', 'Double Bed', 2),
+(3, 'Private Room', 'public/images/jcwwkVjvtBVgpahwJ5rAfGo69Sviqn0UMpRsx1Gt.jpg', '120000', 'Double Bed, Full AC, Kamar Mandi Dalam', 2),
+(4, 'Standard', 'public/images/Fqzyv5i9NibKAUulRXggRKXgVZJ0HDuD6f55QsIW.jpg', '30000', 'Kamar Barak, Kipas Angin, Loker Barang dengan kapasitas 4 dan 9 orang', 2);
 
 -- --------------------------------------------------------
 
@@ -143,7 +142,13 @@ INSERT INTO `details_bill` (`id`, `content`, `price`, `idReservation`, `created_
 (17, 'Penyewaan Selimut', '500000', 28, '2022-02-04', '2022-02-04'),
 (18, 'Biaya ruangan', '250000', 29, '2022-02-05', '2022-02-04'),
 (19, 'Biaya ruangan', '240000', 30, '2022-02-04', '2022-02-04'),
-(20, 'Penyewaan Selimut', '20000', 30, '2022-02-04', '2022-02-04');
+(20, 'Penyewaan Selimut', '20000', 30, '2022-02-04', '2022-02-04'),
+(21, 'Biaya ruangan', '250000', 31, '2022-04-08', '2022-04-07'),
+(22, 'Biaya ruangan', '120000', 32, '2022-04-08', '2022-04-07'),
+(23, 'Biaya ruangan', '120000', 33, '2022-04-23', '2022-04-07'),
+(24, 'Tambah Kasur', '50000', 32, '2022-04-07', '2022-04-07'),
+(25, 'Tambah Guling', '10000', 32, '2022-04-07', '2022-04-07'),
+(26, 'Tambah Selimut', '8000', 32, '2022-04-07', '2022-04-07');
 
 -- --------------------------------------------------------
 
@@ -164,9 +169,9 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `name`, `body`, `image`, `created_at`) VALUES
-(3, 'Wisata Alam', 'Mulai dari Pantai Berpasir Putih hingga Hijaunya Hutan Mangrove. Jelajahi keindahan alam disekitar kami dan kenali kearifan lokal masyarakat setempat. Namun ingat, Cagar Alam Sempu bukan tempat wisata!', 'public/images/hnGy10XZGyla0W3jQNNmmVJWHdtuwtutMp7edKMe.jpeg', '2019-04-02 13:19:04'),
-(4, 'Wisata Aktivitas Air', 'Kurang puas menjelajahi daratan?, coba jelajahi keindahan dunia bawah laut disekitar kami. Atau ingin sekedar berkeliling dan menikmati pemandangan dari kapal?', 'public/images/OVLYksP0OUGCBZv2WVlgylqusJmnAJDyHMr90GmM.jpeg', '2019-04-02 13:19:04'),
-(5, 'Wisata Kuliner Pesisir', 'Ingin mencoba Ikan Bakar? Cumi Asam Manis? Temukan cita rasa kuliner pesisir terbaik dari kedai – kedai tradisional yang ada disekitar kami.', 'public/images/L0ZJyrJibSyxQ082Tf6PInu4OL3H2Ku8tmOGXAT8.jpeg', '2019-04-02 13:19:04');
+(3, 'Wisata Alam', 'Mulai dari Pantai Berpasir Putih hingga Hijaunya Hutan Mangrove. Jelajahi keindahan alam disekitar kami dan kenali kearifan lokal masyarakat setempat. Namun ingat, Cagar Alam Sempu bukan tempat wisata!', 'public/images/fXNX61CFhZpkLjxSORb3MyxJiuwE5gbTPkwSDER1.jpg', '2019-04-02 13:19:04'),
+(4, 'Wisata Aktivitas Air', 'Kurang puas menjelajahi daratan?, coba jelajahi keindahan dunia bawah laut disekitar kami. Atau ingin sekedar berkeliling dan menikmati pemandangan dari kapal?', 'public/images/CfHKQn7vj4NcslcmWkgTZ9YyHjy2L3japhDU3QyG.jpg', '2019-04-02 13:19:04'),
+(5, 'Wisata Kuliner Pesisir', 'Ingin mencoba Ikan Bakar? Cumi Asam Manis? Temukan cita rasa kuliner pesisir terbaik dari kedai – kedai tradisional yang ada disekitar kami.', 'public/images/jfqlNovi43nmm0m2c85g43oteCLkoj1KBkkE6Kn7.jpg', '2019-04-02 13:19:04');
 
 -- --------------------------------------------------------
 
@@ -228,16 +233,19 @@ CREATE TABLE `reservation` (
   `DateIn` datetime NOT NULL,
   `DateOut` datetime NOT NULL,
   `Numbers` int(11) NOT NULL,
-  `Notes` varchar(1000) DEFAULT NULL
+  `Notes` varchar(1000) DEFAULT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'BELUM BAYAR'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `idRoom`, `name`, `phone`, `email`, `DateIn`, `DateOut`, `Numbers`, `Notes`) VALUES
-(28, 18, 'Zanynn Goose', '089666930901', 'oioi@gmail.com', '2022-02-05 00:00:00', '2022-02-06 00:00:00', 1, NULL),
-(29, 16, 'Fauzan', '089666930901', 'zanynngoose@gmai.com', '2022-02-04 00:00:00', '2022-02-05 00:00:00', 2, 'Tambahan Selimut');
+INSERT INTO `reservation` (`id`, `idRoom`, `name`, `phone`, `email`, `DateIn`, `DateOut`, `Numbers`, `Notes`, `status`) VALUES
+(28, 18, 'Zanynn Goose', '089666930901', 'oioi@gmail.com', '2022-02-05 00:00:00', '2022-02-06 00:00:00', 1, NULL, 'LUNAS'),
+(29, 16, 'Fauzan', '089666930901', 'zanynngoose@gmai.com', '2022-02-04 00:00:00', '2022-02-05 00:00:00', 2, 'Tambahan Selimut', 'BELUM BAYAR'),
+(31, 16, 'Elfira', '08816065792', 'elfirasatyap@gmail.com', '2022-04-07 00:00:00', '2022-04-08 00:00:00', 2, 'Butuh selimut 2', 'BELUM BAYAR'),
+(33, 19, 'Elfira', '08816065792', 'elfirasatyap@gmail.com', '2022-04-22 00:00:00', '2022-04-23 00:00:00', 2, 'Tambah kasur dongg', 'BELUM BAYAR');
 
 -- --------------------------------------------------------
 
@@ -282,10 +290,10 @@ CREATE TABLE `room` (
 INSERT INTO `room` (`id`, `name`, `idCategory`, `Status`) VALUES
 (14, 'Lemadang', 1, 1),
 (15, 'Marlin', 1, 1),
-(16, 'Cakalang', 2, 1),
+(16, 'Cakalang', 2, 0),
 (17, 'Tuna', 2, 1),
 (18, 'AB Albakor 01', 3, 1),
-(19, 'AB Albakor 02', 3, 1),
+(19, 'AB Albakor 02', 3, 0),
 (20, 'AB Lemuru 01 SD', 4, 1),
 (21, 'AB Lemuru 02 SD', 4, 1);
 
@@ -306,9 +314,9 @@ CREATE TABLE `slide` (
 --
 
 INSERT INTO `slide` (`id`, `link`, `caption`) VALUES
-(1, 'public/images/BMSlfTFNYG3ugvJcvJyuOonJooXt8QdEIKGxKy16.jpeg', 'Lemadang 101'),
-(2, 'public/images/9PdCo3abuW6dwoHP6lc3juEUApuoNSBbxuIps7YV.jpeg', 'Wisma Madidihang'),
-(3, 'public/images/rSoAqkYsWtcoocz8G4uZGUNlipysd38xNXRkY2BS.webp', 'Pondok Dadap');
+(1, 'public/images/doi40ZvnBHSIJCegpPebSobv9VCiqaVVOo8bjP5S.jpg', 'Lemadang 101'),
+(2, 'public/images/6IZ0uvabfheBGd3dLXpKGtrgZrNP0lqZzZJjhPQt.jpg', 'Wisma Madidihang'),
+(3, 'public/images/3pbmO3xfO8FbagMYXB785EWXvwvkPhrtbfOA5JaZ.jpg', 'Pondok Dadap');
 
 -- --------------------------------------------------------
 
@@ -429,7 +437,7 @@ ALTER TABLE `category_room`
 -- AUTO_INCREMENT untuk tabel `details_bill`
 --
 ALTER TABLE `details_bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT untuk tabel `event`
@@ -447,7 +455,7 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT untuk tabel `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT untuk tabel `room`
